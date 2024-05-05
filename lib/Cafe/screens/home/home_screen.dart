@@ -1,6 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:recipe_sample/Cafe/widgets/banner_widget.dart';
+import 'package:recipe_sample/Cafe/widgets/today_menu_widget.dart';
+import 'package:recipe_sample/Cafe/screens/menu/coffee_menu_screen.dart';
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
 
@@ -44,14 +47,13 @@ class MyHomePage extends StatelessWidget {
           ),
           body: TabBarView(
             children: [
-              Column(
+              ListView(
                 children: [
-                  BannerWidget(bannerItemUrl: bannerItemUrl)
+                  BannerWidget(bannerItemUrl: bannerItemUrl),
+                  TodayMenuWidget(),
                 ],
               ),
-              Center(
-                child: Text('커피앤 음료'),
-              ),
+              CoffeeMenuScreen(),
               Center(
                 child: Text('빙수아이스크림화면'),
               ),
